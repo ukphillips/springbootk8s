@@ -52,7 +52,7 @@ volumes:[
             println "DEBUG: code compile and test stage starting"
             stage ('BUILD: code compile and test') {
                 container('javabuild') {
-                    sh "./mvn package"
+                    sh "./mvnw package"
                 }
             }
 
