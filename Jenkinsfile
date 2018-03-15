@@ -31,13 +31,13 @@ volumes:[
             }
             def buildName = env.JOB_NAME
             def buildNumber = env.BUILD_NUMBER
-            def imageTag = env.BRANCH_NAME + '-' + env.GIT_SHA
             def date = new Date()
             sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss")
             def buildDate = sdf.format(date)
             def appVersion = "${appMajorVersion}.${env.BUILD_NUMBER}"
+            def imageTag = appVersion + '-' + env.GIT_SHA
             def apiImage = "${repo}/springbootk8s:${imageTag}"
-
+            
             // write out variables for debug purposes
             println "DEBUG: env.GIT_COMMIT_ID ==> ${env.GIT_COMMIT_ID}"
             println "DEBUG: env.GIT_SHA ==> ${env.GIT_SHA}"
