@@ -86,11 +86,11 @@ volumes:[
             }
 
             // use kubernetes plug-in to release or update app
-            stage ('DEPLOY: update application on kubernetes') {
-                println "DEBUG: deploy new containers to kubernetes stage"
-                container('kubectl') {
-                    sh "kubectl set image deployment/k8sapi-deploy k8sapi=${env.ENV_API_IMAGE} --namespace=default"
-                }
-            }
+            //stage ('DEPLOY: update application on kubernetes') {
+            //    println "DEBUG: deploy new containers to kubernetes stage"
+             //   container('kubectl') {
+             //       sh "kubectl set image deployment/k8sapi-deploy k8sapi=${env.ENV_API_IMAGE} --namespace=default"
+            //    }
+           // }
         }
     }
