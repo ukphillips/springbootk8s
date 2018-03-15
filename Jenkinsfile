@@ -53,9 +53,7 @@ volumes:[
             stage ('BUILD: code compile and test') {
                 container('javabuild') {
                     sh "mvn package"
-                    sh "chmod +x mvnw"
                     sh "ls"
-                    sh "mvnw package"
                 }
             }
 
