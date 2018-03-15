@@ -53,7 +53,7 @@ volumes:[
             stage ('BUILD: code compile and test') {
                 container('javabuild') {
                     sh "mvn package"
-                    sh "ls"
+                    sh "ls target"
                 }
             }
 
